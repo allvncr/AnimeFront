@@ -248,7 +248,7 @@
 
       text-decoration: none;
       padding: 16px;
-      width: 14.33333%;
+      width: 17%;
       height: 100%;
       border-radius: 3px;
       img{
@@ -529,7 +529,7 @@ export default {
       total: 0,
       search: '',
       nbre: 0,
-      perPage: 12,
+      perPage: 10,
       page: 1,
       studio: undefined,
       tag: [],
@@ -674,6 +674,7 @@ export default {
     Reset(){
       this.ResetT()
       this.ResetS()
+      this.defSort('-created')
       this.getAll()
     },
 

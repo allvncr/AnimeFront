@@ -89,7 +89,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="/">
+                        <a @click="getInt">
                             <div class="tile__action">
                                 <i class="fas fa-random"></i>
                             </div>
@@ -545,6 +545,7 @@
 
 <script>
 import UserService from "@/services/UserService"
+import VidService from "@/services/VidService"
 
 export default {
     props: {
@@ -599,6 +600,16 @@ export default {
                 this.user = result.data
             }).catch((err) => {
                 console.log(err.response.data)
+            })
+        },
+
+        getInt(){
+            VidService.getRandom()
+            .then(response => {
+                this.id = response.data
+                this.$router.push('/anime/'+this.id.slug)
+            }).catch(e => {
+                console.log(e.response.data)
             })
         }
 

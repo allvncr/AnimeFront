@@ -33,7 +33,7 @@
                     <div class="presence">
                         <div class="item">
                             <i class="fas fa-link"></i>
-                            <div class="text">hanime.tv/channels/{{user.username}}-{{user.id}}</div>
+                            <div class="text">anime.tv/channels/{{user.username}}-{{user.id}}</div>
                         </div>
                         <div class="item">
                             <i class="fas fa-history"></i>

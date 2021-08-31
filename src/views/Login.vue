@@ -10,7 +10,7 @@
                 <div class="error" v-show="error">{{errorText}}</div>
                 <form @submit.prevent="handleLogin">
                     <div>
-                        <input type="text" minlength="3" maxlength="50" v-model="Luser.username" placeholder="Username" required autofocus>
+                        <input type="text" minlength="3" maxlength="50" v-model="Luser.username" placeholder="Username" name="username" required autofocus>
                     </div>
                     <div class="hdv-input">
                         <input type="password" minlength="4" maxlength="20" v-model="Luser.password" placeholder="Password" required>

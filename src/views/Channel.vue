@@ -7,7 +7,7 @@
             </div>
             <div class="channel-avatar">
                 <div class="avatar">
-                    <img src="https://dynamic-assets.mobilius.top/images/default-avatars/23.png">
+                    <img :src="channel.photo">
                 </div>
                 <div class="user_name">{{ user.username }}<span>#{{ user.id }}</span></div>
             </div>
@@ -15,11 +15,11 @@
                 <div class="channel-panel">
                     <div class="briefs">
                         <i class="fas fa-link"></i>
-                        <div class="cut_text">hanime.tv/channels/{{ user.username }}-{{ user.id }}</div>
+                        <div title="cliquez pour copier" class="cut_text" @click="copy">anime.tv/channels/{{ user.username }}-{{ user.id }}</div>
                     </div>
                     <div class="briefs">
                         <div class="brief_item">
-                            <div class="item_number">4</div>
+                            <div class="item_number">{{ channel.views }}</div>
                             <div class="item_context">Channel Views</div>
                         </div>
                         <div class="brief_item">
@@ -184,6 +184,10 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+
+                .cut_text:hover{
+                    color: #f3c669;
+                }
 
                 i{
                     display: inline-flex;
@@ -405,6 +409,7 @@ export default {
             UserService.getChannel(this.$store.state.auth.user.username)
             .then((result) => {
                 this.channel = result.data
+                console.log(this.channel)
             }).catch((err) => {
                 console.log(err.response.data)
             })
@@ -424,10 +429,18 @@ export default {
             .then((result) => {
                 this.playlists = result.data
                 this.total = this.playlists.length
+                console.log(this.playlists)
             }).catch((err) => {
                 console.log(err)
             })
         },
+        
+        copy(){
+            navigator.clipboard.writeText('anime.tv/channels/'+this.user.username+'-'+this.user.id)
+            .then(()=>{
+                
+            })
+        }
 
     },
 

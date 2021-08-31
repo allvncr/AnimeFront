@@ -107,7 +107,7 @@
                     rgba(0, 0, 0, 0) 50%, 
                     rgba(0, 0, 0, 0) 80%, 
                     rgba(27, 27, 27, 0.650297619) 
-                    100%),url(https://i.imgur.com/QjZ6RyF.jpg) 
+                    100%),url(https://i.imgur.com/4T2O3zs.jpg) 
                     center center/cover no-repeat #000;
             }
 

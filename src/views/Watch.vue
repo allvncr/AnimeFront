@@ -96,7 +96,7 @@
                 </div>
                 <div class="summary">
                     <div class="category">
-                        <a href="" v-for="(genre, i) in episode.anime.genres" :key="i">
+                        <a :href="'/search?tag='+genre.slug" v-for="(genre, i) in episode.anime.genres" :key="i">
                             {{ genre.name }}
                         </a>
                     </div>
@@ -248,7 +248,7 @@
                 }
 
                 .cover{
-                    width: 20%;
+                    width: 30%;
 
                     @media only screen and (max-width: 768px){
                         img{
